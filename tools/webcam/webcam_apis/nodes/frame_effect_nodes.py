@@ -409,7 +409,12 @@ class HatNode(BaseFrameEffectNode):
             # The image attributes to:
             # http://616pic.com/sucai/1m9i70p52.html
             src_img_path = 'demo/resources/hat.png'
+            # src_img_path = 'https://user-images.githubusercontent.' \
+            #                'com/28900607/149766271-2f591c19-9b67-4' \
+            #                'd92-8f94-c272396ca141.png'
         self.src_img = cv2.imread(src_img_path, cv2.IMREAD_UNCHANGED)
+        # self.src_img = _load_image_from_disk_or_url(src_img_path,
+        #                                             cv2.IMREAD_UNCHANGED)
 
     def draw(self, frame_msg):
         canvas = frame_msg.get_image()
@@ -439,7 +444,9 @@ class FirecrackerNode(BaseFrameEffectNode):
         super().__init__(name, frame_buffer, output_buffer, enable_key)
 
         if src_img_path is None:
-            self.src_img_path = 'demo/resources/firecracker.gif'
+            self.src_img_path = 'https://user-images.githubusercontent' \
+                                '.com/28900607/149766281-6376055c-ed8b' \
+                                '-472b-991f-60e6ae6ee1da.gif'
         src_img = cv2.VideoCapture(self.src_img_path)
 
         self.frame_list = []
@@ -449,7 +456,7 @@ class FirecrackerNode(BaseFrameEffectNode):
             ret, frame = src_img.read()
         self.num_frames = len(self.frame_list)
         self.frame_idx = 0
-        self.frame_period = 5  # each frame in gif lasts for 5 frames in video
+        self.frame_period = 4  # each frame in gif lasts for 4 frames in video
 
     def draw(self, frame_msg):
         canvas = frame_msg.get_image()
