@@ -73,13 +73,13 @@ Optional arguments:
 
 Examples:
 
-Assume that you have already downloaded the checkpoints to the directory `checkpoints/`.
+Assume that you have already downloaded the checkpoints `https://download.openmmlab.com/mmpose/top_down/resnet/res50_coco_256x192-ec54d7f3_20200709.pth` to the directory `checkpoints/`.
 
 1. Test ResNet50 on COCO (without saving the test results) and evaluate the mAP.
 
    ```shell
    ./tools/dist_test.sh configs/body/2d_kpt_sview_rgb_img/topdown_heatmap/coco/res50_coco_256x192.py \
-       checkpoints/SOME_CHECKPOINT.pth 1 \
+       https://download.openmmlab.com/mmpose/top_down/resnet/res50_coco_256x192-ec54d7f3_20200709.pth 1 \
        --eval mAP
    ```
 
@@ -96,7 +96,7 @@ Assume that you have already downloaded the checkpoints to the directory `checkp
    ```shell
    ./tools/slurm_test.sh slurm_partition test_job \
        configs/body/2d_kpt_sview_rgb_img/topdown_heatmap/coco/res50_coco_256x192.py \
-       checkpoints/SOME_CHECKPOINT.pth \
+       https://download.openmmlab.com/mmpose/top_down/resnet/res50_coco_256x192-ec54d7f3_20200709.pth \
        --eval mAP
    ```
 
